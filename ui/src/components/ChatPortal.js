@@ -1,11 +1,14 @@
 import React from 'react';
-import ChatPortalHeader from './ChatPortalHeader';
+import Header from './ChatHeader';
 import '../styles/ChatPortal.css';
 
 function ChatPortal(props) {
   return (
     <div className={`chat-portal ${props.isToggled ? "" : "hidden"}`}>
-      <ChatPortalHeader />
+      <Header
+        meta={props.meta}
+        onToggle={props.onToggle}
+      />
     </div>
   );
 }

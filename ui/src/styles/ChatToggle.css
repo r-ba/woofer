@@ -1,7 +1,6 @@
 .chat-toggle {
   cursor: pointer;
-  background-color: #8984ef;
-  /* background-color: rgb(115,118,226); */
+  background-image: radial-gradient(circle, #3740cf, #333cba, #3037a4, #2d338f, #2a2e7b);
   border-radius: 100%;
   padding: 6px 11px 6px 11px;
   -webkit-box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
