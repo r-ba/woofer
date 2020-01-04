@@ -12,6 +12,12 @@ const fetchAgentInfo = async () => {
   };
 }
 
+const statusListener = callback => {
+  socket.on('agent-status', status => {
+    callback(status);
+  });
+}
+
 const messageEmitter = message => {
   socket.emit('consumer-message', message);
 }
@@ -25,15 +31,15 @@ const messageListener = callback => {
   });
 }
 
-const statusListener = callback => {
-  socket.on('agent-status', status => {
-    callback(status);
-  });
+const destroyListeners = () => {
+  socket.off('agent-status');
+  socket.off('agent-message');
 }
 
 export {
   fetchAgentInfo,
+  statusListener,
   messageEmitter,
   messageListener,
-  statusListener
+  destroyListeners
 };

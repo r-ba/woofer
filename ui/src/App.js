@@ -5,7 +5,8 @@ import {
   fetchAgentInfo,
   statusListener,
   messageEmitter,
-  messageListener
+  messageListener,
+  destroyListeners
 } from './chatAPI';
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
       setMsgCount(count => count + 1);
     });
 
+    return () => destroyListeners();
   }, []);
 
   return (
