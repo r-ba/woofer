@@ -1,6 +1,7 @@
 .chat-toggle {
   cursor: pointer;
-  background-image: radial-gradient(circle, #3740cf, #333cba, #3037a4, #2d338f, #2a2e7b);
+  /* background-image: radial-gradient(circle, #3740cf, #333cba, #3037a4, #2d338f, #2a2e7b); */
+  background-image: linear-gradient(to right top, #706e9f, #7c7aac, #8886b9, #9492c6, #a09ed4);
   border-radius: 100%;
   padding: 6px 11px 6px 11px;
   -webkit-box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
@@ -17,6 +18,12 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.chat-toggle:hover {
+  box-shadow: 0 0px 27px 1.5px rgba(0,0,0,0.4);
 }
 
 .chat-icon {

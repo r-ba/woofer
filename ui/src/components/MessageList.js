@@ -1,18 +1,17 @@
 import React, { useRef, useEffect } from 'react';
-import '../styles/ChatMessages.css';
+import '../styles/MessageList.css';
 
-function ChatMessages(props) {
+function MessageList(props) {
   const listBottom = useRef(null);
 
   useEffect(() => {
-    listBottom.current.scrollIntoView({ behavior: 'smooth' });
+    if (listBottom.current !== null) listBottom.current.scrollIntoView({ behavior: 'smooth' });
   }, [props.data.messages]);
 
   const messageList = props.data.messages.map((msg, key) => {
     return (
       <div className={`message ${msg.sender}`} key={key}>
         { msg.text }
-        <div ref={listBottom} />
       </div>
     );
   });
@@ -20,8 +19,9 @@ function ChatMessages(props) {
   return (
     <div className="message-list">
       { messageList }
+      <div ref={listBottom} />
     </div>
   );
 }
 
-export default ChatMessages;
+export default MessageList;

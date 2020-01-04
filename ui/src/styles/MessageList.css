@@ -18,16 +18,17 @@
   word-wrap: break-word;
   font-weight: 300;
   margin-bottom: 10px;
+  width: 100%;
+  width: calc(100% - 120px);
+  display: block;
 }
 
 .consumer {
   text-align: right;
-  float: right;
   color: white;
   background-color: #928cb7;
-  width: calc(100% - 120px);
   word-wrap: break-word;
-  margin-right: 20px;
+  margin-left: 60px;
 }
 .agent {
   color: #263238;

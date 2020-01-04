@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import ChatToggle from './components/ChatToggle';
-import ChatPortal from './components/ChatPortal';
+import Toggle from './components/Toggle';
+import Chat from './components/Chat';
 import { statusListener, messageListener, messageEmitter, fetchAgentInfo } from './chatAPI';
 
 function App() {
@@ -41,12 +41,12 @@ function App() {
 
   return (
     <React.Fragment>
-      <ChatToggle
+      <Toggle
         data={agentInfo}
         onToggle={toggleChat}
         isToggled={isChatVisible}
       />
-      <ChatPortal
+      <Chat
         data={{
           ...agentInfo,
           agentStatus,

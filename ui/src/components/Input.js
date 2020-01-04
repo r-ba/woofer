@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import '../styles/ChatInput.css';
+import '../styles/Input.css';
 
-function ChatInput(props) {
+function Input(props) {
   const [inputText, setInputText] = useState('');
   const [submitEligible, setSubmitEligible] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
@@ -12,7 +12,7 @@ function ChatInput(props) {
   }
 
   const handleSubmit = () => {
-    if (submitEligible) {
+    if (submitEligible && (inputText.trim() !== '')) {
       props.onSubmit({
         sender: 'consumer',
         text: inputText
@@ -28,9 +28,9 @@ function ChatInput(props) {
   }
 
   return (
-    <div className="input">
+    <div className={`input ${isFocused ? "active" : ""}`}>
       <input
-        className={`input-text ${isFocused ? "active" : ""}`}
+        className="input-text"
         placeholder="Say something..."
         value={inputText}
         onChange={e => handleInputUpdate(e.target.value)}
@@ -46,4 +46,4 @@ function ChatInput(props) {
   );
 }
 
-export default ChatInput;
+export default Input;

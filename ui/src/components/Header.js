@@ -1,9 +1,9 @@
 import React from 'react';
 
 import closeIcon from './../assets/close.png';
-import '../styles/ChatHeader.css';
+import '../styles/Header.css';
 
-function ChatHeader(props) {
+function Header(props) {
   let iconColour = 'grey';
   if (props.data.agentStatus === 'Online') iconColour = 'green';
   else if (props.data.agentStatus === 'Away') iconColour = 'orange';
@@ -33,4 +33,4 @@ function ChatHeader(props) {
   );
 }
 
-export default ChatHeader;
+export default Header;
