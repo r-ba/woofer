@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import Toggle from './components/Toggle';
 import Chat from './components/Chat';
-import { statusListener, messageListener, messageEmitter, fetchAgentInfo } from './chatAPI';
+import {
+  fetchAgentInfo,
+  statusListener,
+  messageEmitter,
+  messageListener
+} from './chatAPI';
 
 function App() {
   const [agentInfo, setAgentInfo] = useState({});
   const [agentStatus, setAgentStatus] = useState('');
   const [messages, setMessages] = useState([]);
-  const [isChatVisible, setChatVisibility] = useState(true);
+  const [msgCount, setMsgCount] = useState(0);
+  const [isChatVisible, setChatVisibility] = useState(false);
 
   const toggleChat = () => {
     setChatVisibility(!isChatVisible);
@@ -35,6 +41,7 @@ function App() {
     // setup listener to recieve messages from agent
     messageListener(newMessage => {
       setMessages(msgs => [...msgs, newMessage]);
+      setMsgCount(count => count + 1);
     });
 
   }, []);
@@ -42,9 +49,10 @@ function App() {
   return (
     <React.Fragment>
       <Toggle
-        data={agentInfo}
         onToggle={toggleChat}
         isToggled={isChatVisible}
+        msgCount={msgCount}
+        setCount={setMsgCount}
       />
       <Chat
         data={{
