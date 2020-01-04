@@ -7,9 +7,8 @@ import '../styles/Toggle.css'
 function Toggle(props) {
   const toggleIcon = isOpen => isOpen ? "icon-hidden" : "";
   return (
-    // todo; add new message count icon
     <div
-      className={`chat-toggle`}
+      className="chat-toggle"
       onClick={props.onToggle}
     >
       <img
@@ -18,7 +17,7 @@ function Toggle(props) {
         alt="Open Chat"
       />
       <img
-        className={`chat-icon ${toggleIcon(!props.isToggled)}`}
+        className={`chat-icon open ${toggleIcon(!props.isToggled)}`}
         src={closeChatIcon}
         alt="Close Chat"
       />
