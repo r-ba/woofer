@@ -3,22 +3,26 @@ import React from 'react';
 import closeIcon from './../assets/close.png';
 import '../styles/ChatHeader.css';
 
-function ChatPortalHeader(props) {
+function ChatHeader(props) {
+  let iconColour = 'grey';
+  if (props.data.agentStatus === 'Online') iconColour = 'green';
+  else if (props.data.agentStatus === 'Away') iconColour = 'orange';
+
   return (
     <div className="header">
       <img
         className="header-icon"
-        src={props.meta.icon}
+        src={props.data.icon}
         alt="User Icon"
       />
       <div className="header-title">
         <div>
-          {props.meta.name}
+          {props.data.name}
         </div>
         <div className="status">
+          <span class={`status-icon ${iconColour}`}></span>
           {
-
-            props.meta.status // todo: add status icon
+            props.data.agentStatus
           }
         </div>
       </div>
@@ -29,4 +33,4 @@ function ChatPortalHeader(props) {
   );
 }
 
-export default ChatPortalHeader;
+export default ChatHeader;

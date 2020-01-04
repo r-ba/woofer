@@ -63,3 +63,24 @@ src: url("../assets/fonts/bentonsans-light-webfont.eot?") format("eot"),
 .header-close-button:hover {
   background: rgb(0,0,0,0.1);
 }
+
+.status-icon {
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 2.5px;
+  margin-bottom: 2px;
+}
+
+.grey {
+  background-color: #bbb;
+}
+
+.orange {
+  background-color: #ed9535;
+}
+
+.green {
+  background-color: #49a96f;
+}
