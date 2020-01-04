@@ -9,11 +9,11 @@
   bottom: 100px;
   position: fixed;
   z-index: 1;
-  transition: opacity .5s, visibility .5s;
+  transition: 0.3s ease-in-out;
 }
 
 .hidden {
   opacity: 0;
   visibility: hidden;
-  transition: opacity 1s, visibility 1s;
+  bottom: 75px;
 }
