@@ -15,7 +15,7 @@ function Toggle(props) {
         props.onToggle();
       }}
     >
-      <div className={`new-msg-count ${count ? "" : "hidden"}`}>
+      <div className={`new-msg-count ${count ? "" : "count-hidden"}`}>
         {count}
       </div>
       <img

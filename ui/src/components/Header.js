@@ -17,7 +17,7 @@ function Header(props) {
   }
 
   return (
-    <div className="header">
+    <div className="portal-header">
       <img
         className="header-icon"
         src={props.data.icon}

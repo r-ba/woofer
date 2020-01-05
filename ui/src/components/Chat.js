@@ -6,7 +6,7 @@ import '../styles/Chat.css';
 
 function Chat(props) {
   return (
-    <div className={`chat-portal ${props.isToggled ? "" : "hidden"}`}>
+    <div className={`chat-portal ${props.isToggled ? "" : "portal-hidden"}`}>
       <Header
         data={props.data}
         onToggle={props.onToggle}

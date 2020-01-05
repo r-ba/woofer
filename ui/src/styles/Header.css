@@ -8,7 +8,7 @@ src: url("../assets/fonts/bentonsans-light-webfont.eot?") format("eot"),
      url("../assets/fonts/bentonsans-light-webfont.svg#Benton-Light") format("svg");
 }
 
-.header {
+.portal-header {
   color: #fff;
   font-family: "Benton-Light", Helvetica, Arial, sans-serif;
   font-weight: 300;
