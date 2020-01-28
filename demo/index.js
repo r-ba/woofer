@@ -1,4 +1,5 @@
 const http = require('http');
+const path = require('path');
 const cors = require('cors');
 const express = require('express');
 const app = express();
@@ -8,9 +9,17 @@ const agentProfile = require('./agent-profile');
 const startAgent = require('./agent');
 startAgent(process.env.SOCKET_PORT || 8080);
 
-app.use(cors());
+app.set('views', __dirname + '/public');
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+app.use(express.static(__dirname + '/public'));
+
 app.set('port', process.env.PORT || 4000);
 const port = app.get('port');
+
+app.get('/', (req, res) => {
+  res.render('index.html');
+});
 
 app.get('/agent', (req, res) => {
   res.json(agentProfile);

@@ -1,7 +1,7 @@
 {
-  "name": "woofer-backend",
+  "name": "woofer-demo",
   "version": "1.0.0",
-  "description": "Example Woofer backend",
+  "description": "A simple demo of Woofer",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,6 +12,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "discord.js": "^11.5.1",
+    "ejs": "^3.0.1",
     "express": "^4.17.1",
     "socket.io": "^2.3.0"
   }
