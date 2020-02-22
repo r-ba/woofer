@@ -17,14 +17,14 @@ function App() {
   const [isChatVisible, setChatVisibility] = useState(false);
 
   const toggleChat = () => {
-    setChatVisibility(!isChatVisible);
+    setChatVisibility(visible => !visible);
   }
 
   const updateMessages = (newMessage) => {
     // send message to agent
     messageEmitter(newMessage.text);
     // store and render message
-    setMessages([...messages, newMessage]);
+    setMessages(messages => [...messages, newMessage]);
   }
 
   useEffect(() => {
@@ -36,7 +36,7 @@ function App() {
 
     // setup listener to track agent status
     statusListener(newStatus => {
-      setAgentStatus(s => newStatus);
+      setAgentStatus(newStatus);
     });
 
     // setup listener to recieve messages from agent
